@@ -39,17 +39,6 @@ createButton.addEventListener("click",()=>{
 
 yesButton.addEventListener("click",()=>{
     if(isCreateUserOK){
-        firebase.auth().createUserWithEmailAndPassword(userID, password)
-        .then((userCredential) => {
-        // Signed in
-        var user = userCredential.user;
-        // ...
-        })
-        .catch((error) => {
-        var errorCode = error.code;
-        var errorMessage = error.message;
-        ShowWarningModal("エラー","errorCode : " + errorCode + "\n" + errorMessage,true);
-        // ..
-        });
+        
     }
 });
