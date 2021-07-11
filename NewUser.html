@@ -12,12 +12,12 @@
     <div class="box">
         <div class="d-flex flex-column bd-highlight mb-3">
             <div class="input-group py-2 px-2">
-                <span class="input-group-text" id="userID">ユーザーID</span>
-                <input type="text" class="form-control" placeholder="UserID..." aria-label="Username" aria-describedby="basic-addon1">
+                <span class="input-group-text">ユーザーID</span>
+                <input type="text" id="userID" class="form-control" placeholder="UserID..." aria-label="Username" aria-describedby="basic-addon1">
             </div>
             <div class="input-group pb-2 px-2">
-                <span class="input-group-text" id="password">パスワード</span>
-                <input type="password" class="form-control" placeholder="Password..." aria-label="Password" aria-describedby="basic-addon1">
+                <span class="input-group-text">パスワード</span>
+                <input type="password" id="password" class="form-control" placeholder="Password..." aria-label="Password" aria-describedby="basic-addon1">
             </div>
             <button type="button" class="btn btn-outline-dark mb-2 mx-auto" id="createButton" data-bs-toggle="modal" data-bs-target="#warning">作成</button>
         </div>
@@ -28,15 +28,15 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
+                    <h5 class="modal-title" id="warningLabel">タイトル</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <p>a</p>
+                    <h6 id="warningBody">質問</h6>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Understood</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">いいえ</button>
+                    <button type="button" class="btn btn-primary">はい</button>
                 </div>
             </div>
         </div>
