@@ -3,16 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <title>Test</title>
-    <script type="text/javascript" src="js/ncmb.min.js" charset="utf-8"></script>
-    <script src="js/ncmbTest.js"></script>
 </head>
 <body>
     <p>
         file <input type="file" id="file-data"/>
     </p>
     <p>file名に:?#[]!$&'()*+,;="<>%~|は使ってはいけません。</p>
-    <button onclick="onFormSend()">send</button>
+    <button id="btn">send</button> 
     <p id="result">
     </p>
+    
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.7.0/firebase-app.js"></script>
+    
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+    https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/8.7.0/firebase-analytics.js"></script>
+    
+    <script>
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        var firebaseConfig = {
+            apiKey: "AIzaSyApze3s5RaOLIIzLnO5LZSA_BFoCij4-KA",
+            authDomain: "fir-test-295d8.firebaseapp.com",
+            projectId: "fir-test-295d8",
+            storageBucket: "fir-test-295d8.appspot.com",
+            messagingSenderId: "462694256092",
+            appId: "1:462694256092:web:ac4c1cb469afad0cdd5319",
+            measurementId: "G-CM36JT3NZN"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        firebase.analytics();
+    </script>
+    <script src="https://www.gstatic.com/firebasejs/8.7.0/firebase-storage.js"></script>
+    
+    <script src="js/firebaseTest.js"></script>
 </body>
 </html>
