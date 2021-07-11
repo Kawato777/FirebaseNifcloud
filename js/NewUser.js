@@ -1,10 +1,24 @@
 // 警告modalセット
 var warningLabel = document.getElementById("warningLabel");
 var warningBody = document.getElementById("warningBody");
-
-function SetWarningModal(label,body) {
+var myModal = new bootstrap.Modal(document.getElementById('warning'), { keyboard: false });
+var noButton = document.getElementById("noButton");
+var yesButton = document.getElementById("yesButton");
+var isCreateUserOK = false;
+function ShowWarningModal(label,body,isYesOnly) {
     warningLabel.innerText = label;
     warningBody.innerText = body;
+    if(isYesOnly)
+    {
+        noButton.style.visibility = "hidden";
+        isCreateUserOK = false;
+    }
+    else
+    {
+        noButton.style.visibility = "visible";
+        isCreateUserOK = true;
+    }
+    myModal.show();
 }
 
 var userID = document.getElementById("userID");
@@ -13,5 +27,29 @@ var password = document.getElementById("password");
 
 var createButton = document.getElementById("createButton");
 createButton.addEventListener("click",()=>{
-    
+    if(userID.value == "" || password.value == "")
+    {
+        ShowWarningModal("注意","ユーザーIDまたはパスワードが入力されていません。",true);
+    }
+    else
+    {
+        ShowWarningModal("アカウント作成の確認","アカウントを作成します。",false);
+    }
+});
+
+yesButton.addEventListener("click",()=>{
+    if(isCreateUserOK){
+        firebase.auth().createUserWithEmailAndPassword(userID, password)
+        .then((userCredential) => {
+        // Signed in
+        var user = userCredential.user;
+        // ...
+        })
+        .catch((error) => {
+        var errorCode = error.code;
+        var errorMessage = error.message;
+        ShowWarningModal("エラー","errorCode : " + errorCode + "\n" + errorMessage,true);
+        // ..
+        });
+    }
 });

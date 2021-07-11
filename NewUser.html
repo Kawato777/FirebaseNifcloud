@@ -19,7 +19,7 @@
                 <span class="input-group-text">パスワード</span>
                 <input type="password" id="password" class="form-control" placeholder="Password..." aria-label="Password" aria-describedby="basic-addon1">
             </div>
-            <button type="button" class="btn btn-outline-dark mb-2 mx-auto" id="createButton" data-bs-toggle="modal" data-bs-target="#warning">作成</button>
+            <button type="button" class="btn btn-outline-dark mb-2 mx-auto" id="createButton">作成</button>
         </div>
     </div>
 
@@ -35,12 +35,40 @@
                     <h6 id="warningBody">質問</h6>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">いいえ</button>
-                    <button type="button" class="btn btn-primary">はい</button>
+                    <button type="button" class="btn btn-secondary" id="noButton" data-bs-dismiss="modal">いいえ</button>
+                    <button type="button" class="btn btn-primary" id="yesButton" data-bs-dismiss="modal">はい</button>
                 </div>
             </div>
         </div>
     </div>
+    
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.7.0/firebase-app.js"></script>
+    
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+    https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/8.7.0/firebase-analytics.js"></script>
+    
+    <script>
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        var firebaseConfig = {
+            apiKey: "AIzaSyApze3s5RaOLIIzLnO5LZSA_BFoCij4-KA",
+            authDomain: "fir-test-295d8.firebaseapp.com",
+            projectId: "fir-test-295d8",
+            storageBucket: "fir-test-295d8.appspot.com",
+            messagingSenderId: "462694256092",
+            appId: "1:462694256092:web:ac4c1cb469afad0cdd5319",
+            measurementId: "G-CM36JT3NZN",
+            databaseURL : "https://fir-test-295d8-default-rtdb.firebaseio.com/"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        firebase.analytics();
+
+        var database = firebase.database();
+    </script>    
+    <script src="https://www.gstatic.com/firebasejs/8.7.0/firebase-database.js"></script>
     
     <script src="js/NewUser.js"></script>
 </body>
