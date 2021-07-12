@@ -1,6 +1,6 @@
 // ニフクラ設定
 var ncmb = new NCMB("0578f008d529a2aac21c4ac90565de916d630496becf28ece0a97a1f2041cedf","fc224f4329c8e447d5ddc78992f054684d2cb587f0c4c9a2cf8181311ed7768c");
-console.log(ncmb);
+var ncmbUser = new ncmb.User();
 
 // 警告modalセット
 var warningLabel = document.getElementById("warningLabel");
@@ -43,6 +43,16 @@ createButton.addEventListener("click",()=>{
 
 yesButton.addEventListener("click",()=>{
     if(isCreateUserOK){
-        
+        ncmbUser.set("userName",userID.value) /* ユーザー名 */
+                .set("password",password.value); /* パスワード */
+        ncmbUser.signUpByAccount()
+                .then(function(){
+                    /* 登録後処理 */
+                    console.log("OK");
+                })
+                .catch(function (err) {
+                    /* エラー処理 */
+                    console.log(err);
+                });
     }
 });
