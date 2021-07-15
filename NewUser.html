@@ -19,7 +19,13 @@
             </div>
             <div class="input-group pb-2 px-2">
                 <span class="input-group-text">パスワード</span>
-                <input type="password" id="password" class="form-control" placeholder="Password..." aria-label="Password" aria-describedby="basic-addon1">
+                <input type="password" id="password" class="form-control" placeholder="Password..." aria-label="Password" aria-describedby="basic-addon1" pattern="^[0-9A-Za-z]+$">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                    <label class="form-check-label" for="flexCheckDefault">
+                    パスワードを表示する
+                    </label>
+                </div>
             </div>
             <button type="button" class="btn btn-outline-dark mb-2 mx-auto" id="createButton">作成</button>
         </div>
@@ -44,12 +50,12 @@
         </div>
     </div>
     
-    <!-- The core Firebase JS SDK is always required and must be listed first -->
-    <!--<script src="https://www.gstatic.com/firebasejs/8.7.0/firebase-app.js"></script>-->
+    <!-- The core Firebase JS SDK is always required and must be listed first --
+    <script src="https://www.gstatic.com/firebasejs/8.7.0/firebase-app.js"></script>
     
-    <!-- TODO: Add SDKs for Firebase products that you want to use
-    https://firebase.google.com/docs/web/setup#available-libraries -->
-    <!--<script src="https://www.gstatic.com/firebasejs/8.7.0/firebase-analytics.js"></script>
+    <-- TODO: Add SDKs for Firebase products that you want to use
+    https://firebase.google.com/docs/web/setup#available-libraries --
+    <script src="https://www.gstatic.com/firebasejs/8.7.0/firebase-analytics.js"></script>
     
     <script>
         // Your web app's Firebase configuration
@@ -65,12 +71,10 @@
             databaseURL : "https://fir-test-295d8-default-rtdb.firebaseio.com/"
         };
         // Initialize Firebase
-    //     firebase.initializeApp(firebaseConfig);
-    //     firebase.analytics();
-
-    //     var database = firebase.database();
-    // </script>    
-    <script src="https://www.gstatic.com/firebasejs/8.7.0/firebase-database.js"></script>-->
+        firebase.initializeApp(firebaseConfig);
+        firebase.analytics();
+    </script>    
+    <script src="https://www.gstatic.com/firebasejs/8.7.0/firebase-database.js"></script> -->
     
     <script src="js/NewUser.js"></script>
 </body>
