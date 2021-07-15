@@ -4,5 +4,13 @@ let ncmbUser = new ncmb.User();
 
 let loginButton = document.getElementById("LoginButton");
 loginButton.addEventListener("click",()=>{
-
+    ncmb.User.login(sessionStorage.getItem("UserID"), sessionStorage.getItem("Password"))
+    .then(function(data){
+        // ログイン後処理
+        console.log("OK!");
+    })
+    .catch(function(err){
+        // エラー処理
+        console.log("NO!" + err.code + err.error);
+    });
 });
