@@ -91,7 +91,7 @@ createButton.addEventListener("click",()=>{
     {
         ShowWarningModal("注意","ユーザーIDまたはパスワードが入力されていません。",true);
     }
-    else if(password.value.match(/^[0-9A-Za-z]+$/))
+    else if(!password.value.match(/^[0-9A-Za-z]+$/))
     {
         ShowWarningModal("注意","パスワードに日本語を使わないでください。",true);
     }
