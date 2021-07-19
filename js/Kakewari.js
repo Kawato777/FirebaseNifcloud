@@ -25,6 +25,7 @@ setButton.addEventListener("click",()=>{
     b.innerText = Number(bStr);
     ab.innerText = "";
     answerButton.removeAttribute("disabled","");
+    setButton.innerText = "パス";
 })
 
 answerButton.addEventListener("click",()=>{
@@ -34,6 +35,7 @@ answerButton.addEventListener("click",()=>{
         counterNum++;
         SetCounter(counterNum);
         kakeList.splice(kakeListSelectNum,1);
+        setButton.innerText = "セット";
         if(kakeList.length == 0){
             ShowWarningModal(true);
             setButton.setAttribute("disabled","");
@@ -58,6 +60,7 @@ function ResetKake() {
     a.innerText = "";
     b.innerText = "";
     ab.innerText = "";
+    setButton.innerText = "セット";
 }
 
 const c = document.getElementById("c");
@@ -89,6 +92,7 @@ setButton2.addEventListener("click",()=>{
     d.innerText = "";
     dNum = Number(dStr);
     answerButton2.removeAttribute("disabled","");
+    setButton2.innerText = "パス";
 })
 
 answerButton2.addEventListener("click",()=>{
@@ -98,6 +102,7 @@ answerButton2.addEventListener("click",()=>{
         counterNum2++;
         SetCounter2(counterNum2);
         wariList.splice(wariListSelectNum,1);
+        setButton2.innerText = "セット";
         if(wariList.length == 0){
             ShowWarningModal(false);
             setButton2.setAttribute("disabled","");
@@ -122,6 +127,7 @@ function ResetWari() {
     c.innerText = "";
     d.innerText = "";
     cd.innerText = "";
+    setButton2.innerText = "セット";
 }
 
 const myModal = new bootstrap.Modal(document.getElementById('warning'), { keyboard: false });
