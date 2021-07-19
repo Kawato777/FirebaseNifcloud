@@ -11,14 +11,12 @@ let kakeListSelectNum;
 
 setButton.addEventListener("click",()=>{
     if(counterNum == 0 && kakeList.length == 0){
-    //     for(let i = 1; i < 10; i++){
-    //         for(let m = 1; m < 10; m++){
-    //             const result = i.toString() + m.toString();
-    //             kakeList.push(result);
-    //         }
-    //     }
-    kakeList.push("11");
-    kakeList.push("12");
+        for(let i = 1; i < 10; i++){
+            for(let m = 1; m < 10; m++){
+                const result = i.toString() + m.toString();
+                kakeList.push(result);
+            }
+        }
     }
     kakeListSelectNum = Math.floor(Math.random() * kakeList.length);
     const aStr = kakeList[kakeListSelectNum].substring(0,1);
@@ -57,6 +55,9 @@ function ResetKake() {
     counterNum = 0;
     kakeList = [];
     setButton.removeAttribute("disabled","");
+    a.innerText = "";
+    b.innerText = "";
+    ab.innerText = "";
 }
 
 const c = document.getElementById("c");
@@ -80,9 +81,9 @@ setButton2.addEventListener("click",()=>{
             }
         }
     }
-    wariListSelectNum = Math.floor(Math.random() * kakeList.length);
+    wariListSelectNum = Math.floor(Math.random() * wariList.length);
     const cStr = wariList[wariListSelectNum].substring(0,1);
-    const dStr = wariList[wariListSelectNum].substring(1,2); 
+    const dStr = wariList[wariListSelectNum].substring(1,2);
     cd.innerText = Number(cStr) * Number(dStr);
     c.innerText = Number(cStr);
     d.innerText = "";
@@ -118,6 +119,9 @@ function ResetWari() {
     counterNum2 = 0;
     wariList = [];
     setButton2.removeAttribute("disabled","");
+    c.innerText = "";
+    d.innerText = "";
+    cd.innerText = "";
 }
 
 const myModal = new bootstrap.Modal(document.getElementById('warning'), { keyboard: false });
@@ -129,7 +133,7 @@ function ShowWarningModal(isKake){
     if(isKake){
         warningLabel.innerText = "かけ算81問終了!"
     }else{
-        warningLabel.innerText = "わり算８１問終了！"
+        warningLabel.innerText = "わり算81問終了！"
     }
     myModal.show();
 }
