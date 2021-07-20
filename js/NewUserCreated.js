@@ -7,7 +7,7 @@ loginButton.addEventListener("click",()=>{
     ncmb.User.login(sessionStorage.getItem("UserID"), sessionStorage.getItem("Password"))
     .then(function(data){
         // ログイン後処理
-        console.log("OK!");
+        console.log(data);
     })
     .catch(function(err){
         // エラー処理
