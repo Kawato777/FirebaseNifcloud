@@ -14,10 +14,9 @@
         <div class="header"></div>
     </header>
     <script>
-        $("div").load("Header.html");
-        window.onload = () =>{
+        $("div").load("Header.html").ready(function(){
             console.log(document.getElementById("a"));
-        };
+        });
     </script>
 </body>
 </html>
