@@ -14,20 +14,12 @@
         <div></div>
     </header>
     <script>
-        $("div").load("Header.html").on('load', function() {
-            console.log("load");
-        });
+        $("div").load("Header.html");
+        window.onload = function(){
+            const A = document.getElementById("mypage");
+            A.classList.add("active");
+            A.setAttribute("href","#");
+        }
     </script>
-    <div class="box2">
-        <div class="input-group p-2 pb-0">
-            <span class="input-group-text" id="basic-addon1">ファイル名</span>
-            <input type="text" class="form-control" id="fileName" placeholder="Filename..." aria-label="Username" aria-describedby="basic-addon1">
-        </div>
-
-        <div class="input-group p-2">
-            <input type="file" class="form-control" id="file-data" aria-describedby="btn" aria-label="アップロード">
-            <button class="btn btn-primary" type="button" id="btn">Upload</button>
-        </div>
-    </div>
 </body>
 </html>
