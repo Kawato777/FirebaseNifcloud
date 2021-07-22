@@ -17,6 +17,7 @@
     <script>
         $("div").load("Header.html");
         window.onload = function(){
+            $("nav").addClass("fixed-top");
             const A = document.getElementById("download");
             A.classList.add("active");
             A.setAttribute("href","#");
