@@ -11,12 +11,23 @@
 </head>
 <body>
     <header>
-        <div class="header"></div>
+        <div></div>
     </header>
     <script>
         $("div").load("Header.html").ready(function(){
             console.log(document.getElementById("a"));
         });
     </script>
+    <div class="box2">
+        <div class="input-group p-2 pb-0">
+            <span class="input-group-text" id="basic-addon1">ファイル名</span>
+            <input type="text" class="form-control" id="fileName" placeholder="Filename..." aria-label="Username" aria-describedby="basic-addon1">
+        </div>
+
+        <div class="input-group p-2">
+            <input type="file" class="form-control" id="file-data" aria-describedby="btn" aria-label="アップロード">
+            <button class="btn btn-primary" type="button" id="btn">Upload</button>
+        </div>
+    </div>
 </body>
 </html>
