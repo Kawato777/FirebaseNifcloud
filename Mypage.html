@@ -14,8 +14,8 @@
         <div></div>
     </header>
     <script>
-        $("div").load("Header.html").ready(function(){
-            console.log(document.getElementById("a"));
+        $("div").load("Header.html").on('load', function() {
+            console.log("load");
         });
     </script>
     <div class="box2">
