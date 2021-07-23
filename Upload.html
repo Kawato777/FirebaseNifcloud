@@ -28,6 +28,7 @@
             const ncmbLoginedUser = new ncmb.User.getCurrentUser();
             console.log(ncmbLoginedUser);
             if(ncmbLoginedUser){
+                console.log("a");
                 $("login").remove();
                 $("newUser").remove();
             }
