@@ -7,7 +7,7 @@ loginButton.addEventListener("click",()=>{
     ncmb.User.login(sessionStorage.getItem("UserID"), sessionStorage.getItem("Password"))
     .then(function(data){
         // ログイン後処理
-        console.log(data);
+        location.href = "Upload.html";
     })
     .catch(function(err){
         // エラー処理
