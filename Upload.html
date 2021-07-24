@@ -33,9 +33,9 @@
                 document.getElementById("newUser").remove();
                 const userInf = document.getElementById("userInf");
                 if(ncmbLoginedUser.get("isAnonymous")){
-                    userInf.innerText = "A";
+                    userInf.innerText = "ゲスト会員でログイン中です。";
                 }else{
-                    userInf.innerText = "B";
+                    userInf.innerText = ncmbLoginedUser.get("userName") + "でログイン中です。";
                 }
             }
         }
