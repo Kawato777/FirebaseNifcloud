@@ -16,6 +16,8 @@
     <header>
         <div></div>
     </header>
+
+    <p class="fw-bolder ms-2" id="userInf">会員情報提示</p>
     <script>
         $("div").load("Header.html");
         window.onload = function(){
@@ -29,6 +31,12 @@
             if(ncmbLoginedUser){
                 document.getElementById("login").remove();
                 document.getElementById("newUser").remove();
+                const userInf = document.getElementById("userInf");
+                if(ncmbLoginedUser.get("isAnonymous")){
+                    userInf.innerText = "A";
+                }else{
+                    userInf.innerText = "B";
+                }
             }
         }
     </script>

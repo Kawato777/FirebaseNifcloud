@@ -45,9 +45,9 @@ const nifcloudErrorList = [
     ];
 //#endregion
 
+const guestButton = document.getElementById("guest");
 // ニフクラ設定
 const ncmb = new NCMB("0578f008d529a2aac21c4ac90565de916d630496becf28ece0a97a1f2041cedf","fc224f4329c8e447d5ddc78992f054684d2cb587f0c4c9a2cf8181311ed7768c");
-const ncmbUser = new ncmb.User();
 
 // 警告modalセット
 const warningLabel = document.getElementById("warningLabel");
@@ -72,50 +72,23 @@ function ShowWarningModal(label,body,isYesOnly) {
     myModal.show();
 }
 
-const userID = document.getElementById("userID");
-const password = document.getElementById("password");
-// userID.value password.value
-
-const pwdCheck = document.getElementById('flexCheckDefault');
-pwdCheck.addEventListener('change', function() {
-    if(pwdCheck.checked) {
-        password.setAttribute('type', 'text');
-    } else {
-        password.setAttribute('type', 'password');
-    }
-}, false);
-
-const createButton = document.getElementById("createButton");
-createButton.addEventListener("click",()=>{
-    if(userID.value == "" || password.value == "")
-    {
-        ShowWarningModal("注意","ユーザーIDまたはパスワードが入力されていません。",true);
-    }
-    else if(!password.value.match(/^[0-9A-Za-z]+$/))
-    {
-        ShowWarningModal("注意","パスワードに日本語を使わないでください。",true);
-    }
-    else
-    {
-        ShowWarningModal("アカウント作成の確認","アカウントを作成します。",false);
-    }
+guestButton.addEventListener("click",() =>{
+    ShowWarningModal("ゲスト会員でもよろしいですか。","ゲスト会員の場合すべての機能が使えず制限されます。それでもゲスト会員としてログインしますか。",false);
 });
 
 yesButton.addEventListener("click",()=>{
-    if(isCreateUserOK){
-        ncmbUser.set("userName",userID.value) /* ユーザー名 */
-                .set("password",password.value)
-                .set("isAnonymous",false); /* パスワード */
-        ncmbUser.signUpByAccount()
-                .then(function(){
-                    /* 登録後処理 */
-                    sessionStorage.setItem("UserID",userID.value);
-                    sessionStorage.setItem("Password",password.value);
-                    location.href = "NewUserCreated.html";
-                })
-                .catch(function (err) {
-                    /* エラー処理 */
-                    ShowWarningModal("アカウントを作成できませんでした。","Error Code:" + err.code + "\n" + nifcloudErrorList.find(value => value.エラーコード == err.code).内容 + "\n" + err.error, true);
+    ncmb.User.loginAsAnonymous()
+        .then(function (data) {
+            // ログイン後処理
+            data.set("isAnonymous",true);
+            data.update()
+                .then(function (params) {
+                    location.href = "Upload.html";
                 });
-    }
+        })
+        .catch(function (err) {
+            // エラー処理
+            console.log(err);
+            ShowWarningModal("ゲストアカウントを作成できませんでした。","Error Code:" + err.code + "\n" + nifcloudErrorList.find(value => value.エラーコード == err.code).内容 + "\n" + err.error, true);
+        });
 });
