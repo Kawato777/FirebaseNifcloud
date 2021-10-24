@@ -46,7 +46,7 @@ const nifcloudErrorList = [
 //#endregion
 
 // ニフクラ設定
-const ncmb = new NCMB("0578f008d529a2aac21c4ac90565de916d630496becf28ece0a97a1f2041cedf","fc224f4329c8e447d5ddc78992f054684d2cb587f0c4c9a2cf8181311ed7768c");
+const ncmb = new NCMB("b7aa0c69b8a15ec5b9707874fda1bed7df735d8235a20d983ce611e01333462f","03b895aa242a7e73cd7d33aede1a2336d4064c864ce186c77c2be238062b78fe");
 const ncmbUser = new ncmb.User();
 
 // 警告modalセット
