@@ -55,6 +55,7 @@ btn.addEventListener("click", () => {
         downloadFileRef.put(fileData).then(function(snapshot){
             // console.log("Uploaded a blob or file!");
             window.alert("OK!");
+            console.log("OK!");
         });
     }
 });
