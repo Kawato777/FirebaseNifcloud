@@ -31,7 +31,7 @@ function getExt(filename)
 }
 
 let btn = document.getElementById("btn");
-let userRef = storageRef.child("banana");
+let userRef = storageRef.child("banana");   //POTATO
 // if(ncmbLoginedUser.get("isAnonymous")){
 //     userRef = storageRef.child("匿名ユーザー/" + ncmbLoginedUser.get("userName"));
 // }else{
