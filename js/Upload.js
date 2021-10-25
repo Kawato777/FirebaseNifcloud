@@ -31,7 +31,7 @@ function getExt(filename)
 }
 
 let btn = document.getElementById("btn");
-let userRef = "banana";
+let userRef = storageRef.child("banana");
 // if(ncmbLoginedUser.get("isAnonymous")){
 //     userRef = storageRef.child("匿名ユーザー/" + ncmbLoginedUser.get("userName"));
 // }else{
