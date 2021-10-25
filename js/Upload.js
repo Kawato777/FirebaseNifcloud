@@ -31,12 +31,12 @@ function getExt(filename)
 }
 
 let btn = document.getElementById("btn");
-let userRef;
-if(ncmbLoginedUser.get("isAnonymous")){
-    userRef = storageRef.child("匿名ユーザー/" + ncmbLoginedUser.get("userName"));
-}else{
-    userRef = storageRef.child("正規ユーザー/" + ncmbLoginedUser.get("userName"));
-}
+let userRef = "banana";
+// if(ncmbLoginedUser.get("isAnonymous")){
+//     userRef = storageRef.child("匿名ユーザー/" + ncmbLoginedUser.get("userName"));
+// }else{
+//     userRef = storageRef.child("正規ユーザー/" + ncmbLoginedUser.get("userName"));
+// }
 btn.addEventListener("click", () => {
     // アップロード処理
     if(checkBox.checked){
